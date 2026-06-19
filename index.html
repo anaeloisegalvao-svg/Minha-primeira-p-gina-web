@@ -27,7 +27,7 @@ img{
     width:300px ;
     height: 300px;
 }
-p {
+.artigo-autor  {
     font-weight: bold;
 }
     </style>
@@ -45,9 +45,18 @@ p {
  <div>
 
             <h2>Meu primeiro post</h2>
-            <p class=Por:Ana Eloise</p>
+            <p class="artigo-autor">Por:Ana Eloise</p>
             <p>Boas vindas ao Meu novo Blog! Aqui irei compartilhar meu dia dia na lida do campo.</p>
+            <button>❤️ <span>0</span></button>
 </div>
         </main>
 </body>
+<script>
+    const botao =document.querySelector("button");
+    botao.addEventListener("click", botaoClicado);
+
+    function botaoClicado(){
+        console.log("fui clicado");
+    }
+</script>
 </html>
