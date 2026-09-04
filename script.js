@@ -1,24 +1,31 @@
-const botoes = document.querySelectorAll("button");
+// 1. Seleciona APENAS os botões de reação dentro dos artigos
+const botoesReacao = document.querySelectorAll("article button");
 
-botoes.forEach(function (botao) {
+botoesReacao.forEach(function (botao) {
    let curtiu = false;
    
    botao.addEventListener("click", function () {
       let texto = botao.querySelector("span");
+      
+      // Converte o texto para número de forma segura
+      let contador = Number(texto.textContent);
+
       if (!curtiu) {
-         texto.textContent = Number(texto.textContent) + 1;
+         texto.textContent = contador + 1;
          curtiu = true;
       } else { 
-         texto.textContent = Number(texto.textContent) - 1;
+         texto.textContent = contador - 1;
          curtiu = false;
       }
    });
 });
-    
-const btnTemaEscuro = document.querySelector(".btn-tema-escuro");
 
-if (btnTemaEscuro) {
-   btnTemaEscuro.addEventListener("click", function () {
+// 2. Seleciona o botão com a classe exata usada no seu HTML (btn-modo-escuro)
+const btnModoEscuro = document.querySelector(".btn-modo-escuro");
+
+if (btnModoEscuro) {
+   btnModoEscuro.addEventListener("click", function () {
+      // Alterna a classe 'tema-escuro' no body da página
       document.body.classList.toggle("tema-escuro");
    });
 }
